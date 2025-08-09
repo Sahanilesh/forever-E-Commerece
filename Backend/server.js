@@ -24,7 +24,13 @@ uploadOnCloudinary();
 // middleware
 
 app.use(express.json()); // For parsing application/json
-app.use(cors())
+app.use(cors(
+    {
+        origin: "https://forever-e-commerece-frontend.vercel.app",
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    }
+))
 
 // api endpoints:
 app.use('/api/user', userRouter)
